@@ -20,6 +20,7 @@
                         'image' => $product->image,
                         'title' => $product->title,
                         'price' => $product->price,
+                        'addToCartUrl' => route('cart.add', $product)
                     ]) }})"
                     class="border border-1 border-gray-200 rounded-md hover:border-purple-600 transition-colors bg-white"
                 >
@@ -40,7 +41,7 @@
                         <h5 class="font-bold">R${{$product->price}}</h5>
                     </div>
                     <div class="flex justify-between py-3 px-4">
-                        <button class="btn-primary">
+                        <button class="btn-primary" @click="addToCart()">
                             Adicionar ao Carrinho
                         </button>
                     </div>

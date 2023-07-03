@@ -16,9 +16,12 @@ class GuestOrVerified extends \Illuminate\Auth\Middleware\EnsureEmailIsVerified
      */
     public function handle($request, Closure $next, $redirectToRoute = null)
     {
+        //se o usuário for convidado ele prossegue
         if (!$request->user()) {
             return $next($request);
         }
+
+        //chamado o verificador de email (EnsureEmailIsVerified) (usuário logado)
         return parent::handle($request, $next, $redirectToRoute);
     }
 }

@@ -63,6 +63,8 @@ class CartController extends Controller
                     'price' => $product->price
                 ];
             }
+
+            //salva os items do carrinho em cookies por um mês
             Cookie::queue('cart_items', json_encode($cartItems), 60 * 24 * 30);
 
             return response(['count' => Cart::getCountFromItems($cartItems)]);
@@ -89,6 +91,8 @@ class CartController extends Controller
                     break;
                 }
             }
+
+            //salva os items do carrinho em cookies por um mês
             Cookie::queue('cart_items', json_encode($cartItems), 60 * 24 * 30);
 
             return response(['count' => Cart::getCountFromItems($cartItems)]);
@@ -113,6 +117,8 @@ class CartController extends Controller
                     break;
                 }
             }
+
+            //salva os items do carrinho em cookies por um mês
             Cookie::queue('cart_items', json_encode($cartItems), 60 * 24 * 30);
 
             return response(['count' => Cart::getCountFromItems($cartItems)]);
