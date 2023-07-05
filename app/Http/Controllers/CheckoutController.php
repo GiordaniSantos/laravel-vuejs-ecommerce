@@ -43,6 +43,7 @@ class CheckoutController extends Controller
                 ],
                 'quantity' => $quantity,
             ];
+            // Montar itens do pedido
             $orderItems[] = [
                 'product_id' => $product->id,
                 'quantity' => $quantity,

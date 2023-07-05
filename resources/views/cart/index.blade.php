@@ -79,7 +79,7 @@
                         <form action="{{route('cart.checkout')}}" method="post">
                             @csrf
                             <button type="submit" class="btn-primary w-full py-3 text-lg">
-                                Fazer o check-out
+                                Fazer o Pagamento
                             </button>
                         </form>
                     </div>
