@@ -139,7 +139,7 @@ class CheckoutController extends Controller
         foreach ($order->items as $item) {
             $lineItems[] = [
                 'price_data' => [
-                    'currency' => 'usd',
+                    'currency' => 'brl',
                     'product_data' => [
                         'name' => $item->product->title,
 //                        'images' => [$product->image]
