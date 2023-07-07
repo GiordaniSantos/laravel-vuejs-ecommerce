@@ -19,6 +19,11 @@ Route::middleware(['auth:sanctum', 'admin'])->group(function () {
     Route::post('/logout', [\App\Http\Controllers\Api\AuthController::class, 'logout']);
 
     Route::apiResource('products', \App\Http\Controllers\Api\ProductController::class);
+
+    Route::get('orders', [\App\Http\Controllers\Api\OrderController::class, 'index']);
+    Route::get('orders/statuses', [\App\Http\Controllers\Api\OrderController::class, 'getStatuses']);
+    Route::post('orders/change-status/{order}/{status}', [\App\Http\Controllers\Api\OrderController::class, 'changeStatus']);
+    Route::get('orders/{order}', [\App\Http\Controllers\Api\OrderController::class, 'view']);
 });
 
 Route::post('/login', [\App\Http\Controllers\Api\AuthController::class, 'login']);
