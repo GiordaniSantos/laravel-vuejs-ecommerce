@@ -44,6 +44,15 @@ const store = createStore({
             message: '',
             delay: 5000
         },
+        dateOptions: [
+            {key: '1d', text: 'Último Dia'},
+            {key: '1k', text: 'Última Semana'},
+            {key: '2k', text: '2 Últimas Semanas'},
+            {key: '1m', text: 'Último Mês'},
+            {key: '3m', text: '3 Últimos Meses'},
+            {key: '6m', text: '6 Últimos Meses'},
+            {key: 'all', text: 'Todo tempo'},
+        ]
     },
     getters: {},
     actions,
