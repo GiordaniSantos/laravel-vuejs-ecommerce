@@ -36,6 +36,10 @@ Route::middleware(['auth:sanctum', 'admin'])->group(function () {
 
     Route::apiResource('customers', \App\Http\Controllers\Api\CustomerController::class);
     Route::get('/countries', [\App\Http\Controllers\Api\CustomerController::class, 'countries']);
+
+    // Report routes
+    Route::get('/report/orders', [\App\Http\Controllers\ReportController::class, 'orders']);
+    Route::get('/report/customers', [\App\Http\Controllers\ReportController::class, 'customers']);
 });
 
 Route::post('/login', [\App\Http\Controllers\Api\AuthController::class, 'login']);
