@@ -12,7 +12,7 @@
                     <th class="text-left p-2">Pedido #</th>
                     <th class="text-left p-2">Data</th>
                     <th class="text-left p-2">Status</th>
-                    <th class="text-left p-2">SubTotal</th>
+                    <th class="text-left p-2">Total</th>
                     <th class="text-left p-2">Items</th>
                     <th class="text-left p-2">Ações</th>
                 </tr>
@@ -28,7 +28,7 @@
                                 #{{$order->id}}
                             </a>
                         </td>
-                        <td class="py-1 px-2 whitespace-nowrap">{{$order->created_at}}</td>
+                        <td class="py-1 px-2 whitespace-nowrap">{{$order->created_at->format('d/m/Y H:i:s')}}</td>
                         <td class="py-1 px-2">
                             <small class="text-white py-1 px-2 rounded
                                 {{$order->isPaid() ? 'bg-emerald-500' : 'bg-gray-400' }}">

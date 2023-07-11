@@ -36,7 +36,7 @@
         <button
             class="btn-primary bg-emerald-500 hover:bg-emerald-600 active:bg-emerald-700 w-full"
         >
-            Signup
+            Registrar
         </button>
     </form>
 </x-app-layout>

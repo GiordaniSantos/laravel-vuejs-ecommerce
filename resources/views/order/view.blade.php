@@ -11,7 +11,7 @@
                 </tr>
                 <tr>
                     <td class="font-bold py-1 px-2">Data do Pedido</td>
-                    <td>{{$order->created_at}}</td>
+                    <td>{{$order->created_at->format('d/m/Y H:i:s')}}</td>
                 </tr>
                 <tr>
                     <td class="font-bold py-1 px-2">Status do Pedido</td>
@@ -23,7 +23,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td class="font-bold py-1 px-2">SubTotal</td>
+                    <td class="font-bold py-1 px-2">Total</td>
                     <td>R${{ $order->total_price }}</td>
                 </tr>
                 </tbody>
@@ -45,7 +45,7 @@
                             </h3>
                         </div>
                         <div class="flex justify-between items-center">
-                            <div class="flex items-center">Qty: {{$item->quantity}}</div>
+                            <div class="flex items-center">Qtd: {{$item->quantity}}</div>
                             <span class="text-lg font-semibold"> R${{$item->unit_price}} </span>
                         </div>
                     </div>

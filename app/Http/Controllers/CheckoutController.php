@@ -22,6 +22,11 @@ class CheckoutController extends Controller
     
         $user = $request->user();
 
+        if(!$user->customer->shippingAddress || !$user->customer->billingAddress){
+            $teste = 'teste';
+            return redirect(route('profile', ['message' => 'Antes de prosseguir com o pagamento, conclua o cadastro de sua conta!']));
+        }
+
         \Stripe\Stripe::setApiKey(getenv('STRIPE_SECRET_KEY'));
 
         [$products, $cartItems] = Cart::getProductsAndCartItems();

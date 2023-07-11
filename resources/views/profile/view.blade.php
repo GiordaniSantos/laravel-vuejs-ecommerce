@@ -1,4 +1,9 @@
 <x-app-layout>
+    @if (isset($message))      
+        <div class="w-[400px] mx-auto bg-red-500 py-2 px-3 text-white rounded">
+            <p>{{$message ?? ''}}</p>
+        </div>
+    @endif
     <div x-data="{
             flashMessage: '{{\Illuminate\Support\Facades\Session::get('flash_message')}}',
             init() {
